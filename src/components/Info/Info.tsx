@@ -31,6 +31,7 @@ import {
 } from "./Info.styled";
 export default function Info(props: any) {
   const [color, setColor] = useState(props.data.color);
+  const [hoverColor, setHoverColor] = useState("#d8d8d847");
   const [overview, setOverview] = useState<boolean>(false);
   const [structure, setStructure] = useState<boolean>(false);
 
@@ -99,6 +100,7 @@ export default function Info(props: any) {
               </ContentSpecialBox>
               <ChangeBoxTablet>
                 <BoxTablet
+                  hoverColor={hoverColor}
                   overview={overview}
                   structure={structure}
                   surface={props.surface}
@@ -109,6 +111,7 @@ export default function Info(props: any) {
                   <TextTablet>OVERVIEW</TextTablet>
                 </BoxTablet>
                 <BoxTabletStructure
+                  hoverColor={hoverColor}
                   overview={overview}
                   structure={structure}
                   surface={props.surface}
@@ -119,6 +122,7 @@ export default function Info(props: any) {
                   <TextTablet>Structure</TextTablet>
                 </BoxTabletStructure>
                 <BoxTabletSurface
+                  hoverColor={hoverColor}
                   overview={overview}
                   color={color}
                   structure={structure}

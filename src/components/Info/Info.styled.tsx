@@ -240,6 +240,7 @@ interface StyledComponentProps {
   overview: boolean;
   surface: boolean;
   structure: boolean;
+  hoverColor: string;
 }
 
 export const BoxTablet = styled.div<StyledComponentProps>`
@@ -253,7 +254,7 @@ export const BoxTablet = styled.div<StyledComponentProps>`
   align-items: center;
   padding: 20px;
   &:hover {
-    background-color: ${(props) => (props.overview ? props.color : "")};
+    background-color: ${(props) => props.hoverColor};
   }
   @media screen and (min-width: 1440px) {
     height: 48px;
@@ -271,7 +272,7 @@ export const BoxTabletStructure = styled.div<StyledComponentProps>`
   align-items: center;
   padding: 20px;
   &:hover {
-    background-color: "#ff0000";
+    background-color: ${(props) => props.hoverColor};
   }
   @media screen and (min-width: 1440px) {
     height: 48px;
@@ -289,7 +290,7 @@ export const BoxTabletSurface = styled.div<StyledComponentProps>`
   align-items: center;
   padding: 20px;
   &:hover {
-    background-color: "#D8D8D8";
+    background-color: ${(props) => props.hoverColor};
   }
   @media screen and (min-width: 1440px) {
     height: 48px;
