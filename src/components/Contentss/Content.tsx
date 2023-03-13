@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import Info from "../Info/Info";
-import button from "../../assets/icon-chevron.svg";
+import button from "../../../public/assets/icon-chevron.svg";
 import Header from "../Header/Header";
 import {
   Box,

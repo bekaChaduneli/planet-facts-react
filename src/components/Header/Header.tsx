@@ -1,5 +1,5 @@
 import { Container, Image, Text } from "./Header.styled";
-import manu from "../../assets/icon-hamburger.svg";
+import manu from "../../../public/assets/icon-hamburger.svg";
 export default function Header(props: any) {
   return (
     <Container>

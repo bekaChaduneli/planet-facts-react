@@ -1,5 +1,5 @@
 import { useState } from "react";
-import linkImage from "../../assets/icon-source.svg";
+import linkImage from "../../../public/assets/icon-source.svg";
 import {
   ChangeBox,
   Box,
