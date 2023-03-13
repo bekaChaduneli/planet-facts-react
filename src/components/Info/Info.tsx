@@ -19,6 +19,8 @@ import {
   ContentBox,
   SecondContent,
   ContentSpecialBox,
+  BoxTabletStructure,
+  BoxTabletSurface,
   BoxTablet,
   TextTablet,
   Tablet,
@@ -28,12 +30,12 @@ import {
   SurfaceImage,
 } from "./Info.styled";
 export default function Info(props: any) {
-  const [color, setColor] = useState("#fff");
+  const [color, setColor] = useState(props.data.color);
   const [overview, setOverview] = useState<boolean>(false);
   const [structure, setStructure] = useState<boolean>(false);
 
   const makeOverview = () => {
-    setColor("#419EBB");
+    setColor(props.data.color);
     setOverview(true);
     props.setText(props.data.overview.content);
     props.setImage(props.data.images.planet);
@@ -41,7 +43,7 @@ export default function Info(props: any) {
     setStructure(false);
   };
   const makeStructure = () => {
-    setColor("#419EBB");
+    setColor(props.data.color);
     setStructure(true);
     setOverview(false);
     props.setText(props.data.structure.content);
@@ -49,8 +51,9 @@ export default function Info(props: any) {
     props.setSurface(false);
   };
   const makeSurface = () => {
-    setColor("#419EBB");
+    setColor(props.data.color);
     setStructure(false);
+    setOverview(false);
     props.setText(props.data.geology.content);
     props.setImage(props.data.images.planet);
     props.setSurface(true);
@@ -95,18 +98,36 @@ export default function Info(props: any) {
                 </TextLink>
               </ContentSpecialBox>
               <ChangeBoxTablet>
-                <BoxTablet overview={overview} onClick={makeOverview}>
+                <BoxTablet
+                  overview={overview}
+                  structure={structure}
+                  surface={props.surface}
+                  onClick={makeOverview}
+                  color={color}
+                >
                   <TextNumerationTablet>01</TextNumerationTablet>
                   <TextTablet>OVERVIEW</TextTablet>
                 </BoxTablet>
-                <BoxTablet overview={overview} onClick={makeStructure}>
+                <BoxTabletStructure
+                  overview={overview}
+                  structure={structure}
+                  surface={props.surface}
+                  color={color}
+                  onClick={makeStructure}
+                >
                   <TextNumerationTablet>02</TextNumerationTablet>
                   <TextTablet>Structure</TextTablet>
-                </BoxTablet>
-                <BoxTablet overview={overview} onClick={makeSurface}>
+                </BoxTabletStructure>
+                <BoxTabletSurface
+                  overview={overview}
+                  color={color}
+                  structure={structure}
+                  surface={props.surface}
+                  onClick={makeSurface}
+                >
                   <TextNumerationTablet>03</TextNumerationTablet>
                   <TextTablet>Surface</TextTablet>
-                </BoxTablet>
+                </BoxTabletSurface>
               </ChangeBoxTablet>
             </SecondContent>
           </ContentBox>

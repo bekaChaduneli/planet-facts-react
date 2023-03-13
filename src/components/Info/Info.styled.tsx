@@ -228,7 +228,6 @@ export const ChangeBoxTablet = styled.div`
   width: 100%;
   margin-top: 80px;
   flex-direction: column;
-  background-color: ${(props) => (props.overview ? "" : "")}
   gap: 16px;
   @media screen and (min-width: 768px) {
     display: flex;
@@ -237,17 +236,60 @@ export const ChangeBoxTablet = styled.div`
     margin-top: 0px;
   }
 `;
+interface StyledComponentProps {
+  overview: boolean;
+  surface: boolean;
+  structure: boolean;
+}
 
-export const BoxTablet = styled.div`
+export const BoxTablet = styled.div<StyledComponentProps>`
+  width: 100%;
+  height: 40px;
+  border: 2px solid #ffffff1c;
+  display: flex;
+  transition: 0.4s;
+  flex-direction: row;
+  background-color: ${(props) => (props.overview ? props.color : "")};
+  align-items: center;
+  padding: 20px;
+  &:hover {
+    background-color: ${(props) => (props.overview ? props.color : "")};
+  }
+  @media screen and (min-width: 1440px) {
+    height: 48px;
+  }
+`;
+
+export const BoxTabletStructure = styled.div<StyledComponentProps>`
   width: 100%;
   height: 40px;
   border: 2px solid #ffffff1c;
   display: flex;
   flex-direction: row;
+  background-color: ${(props) => (props.structure ? props.color : "")};
+  transition: 0.4s;
   align-items: center;
   padding: 20px;
   &:hover {
-    background-color: ${({ theme }) => theme.main};
+    background-color: "#ff0000";
+  }
+  @media screen and (min-width: 1440px) {
+    height: 48px;
+  }
+`;
+
+export const BoxTabletSurface = styled.div<StyledComponentProps>`
+  width: 100%;
+  height: 40px;
+  transition: 0.4s;
+  border: 2px solid #ffffff1c;
+  display: flex;
+  flex-direction: row;
+  background-color: ${(props) => (props.surface ? props.color : "")};
+  align-items: center;
+  padding: 20px;
+  &:hover {
+    background-color: "#D8D8D8";
   }
   @media screen and (min-width: 1440px) {
     height: 48px;
