@@ -14,8 +14,8 @@
 
 ### Links
 
-- Live Site URL: [Live site](https://tip-calculator-app-react.web.app/)
-- Solution URL: [Solution URL](https://github.com/bekaChaduneli/tip-calculator-app-REACT)
+- Live Site URL: [Live site](https://planet-facts-reacts-bglpub0w9-bekachaduneli.vercel.app/)
+- Solution URL: [Solution URL](https://github.com/bekaChaduneli/planet-facts-react)
 
 ### Built with
 
