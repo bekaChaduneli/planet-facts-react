@@ -103,7 +103,7 @@ export const LinkBox = styled.p`
 `;
 
 export const Main = styled.div`
-  background-image: url("./src/assets/background-stars.svg");
+  background-image: url("../../../public/assets/background-stars.svg");
 `;
 
 export const Flex = styled.div`
